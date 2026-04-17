@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inteko Nyarwanda Y'Ururimi N'Umuco</title>
+  <style>
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #d0d0d0;
+    }
+
+    /* ===== HEADER DIV ===== */
+    .header {
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .header .logo-left img,
+    .header .logo-right img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+
+
+    .header .header-text {
+      text-align: center;
+      flex: 1;
+      padding: 0 20px;
+    }
+
+    .header .header-text h1 {
+      font-size: 28px;
+      font-weight: bold;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .header .header-text .tagline {
+      font-size: 14px;
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+
+    .header .header-text .ntibavuga {
+      color: #cc0000;
+      font-weight: bold;
+    }
+
+    .header .header-text .bavuga {
+      color: #0033cc;
+      font-weight: bold;
+    }
+
+    /* ===== NAV DIV ===== */
+    .navbar {
+      background: #cc2200;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .navbar ul li a {
+      display: block;
+      padding: 12px 0;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .navbar ul li a:hover {
+      background: #991a00;
+      color: #fff;
+    }
+
+    /* ===== MAIN CONTENT DIV ===== */
+    .main-content {
+      padding: 20px;
+      background: #d0d0d0;
+    }
+
+    /* ===== CARDS ROW (3-column grid using divs/classes) ===== */
+    .cards-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    /* Each card div */
+    .card {
+      flex: 1;
+      background: #ffffff;
+      max-width: 420px;
+    }
+
+    /* Card image area */
+    .card .card-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, #2a3a5a, #4a6a9a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Soccer player style background (mimicking the original image) */
+    .card-img-1 { background: linear-gradient(160deg, #1a2a3a 30%, #2a4a6a 60%, #1a3a2a 100%); }
+    .card-img-2 { background: linear-gradient(160deg, #2a1a3a 30%, #4a2a6a 60%, #1a3a3a 100%); }
+    .card-img-3 { background: linear-gradient(160deg, #1a2a1a 30%, #2a4a2a 60%, #3a2a1a 100%); }
+
+    .card .card-img .sport-icon {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* Card title bar (dark teal background) */
+    .card .card-title {
+      background: #2a4a4a;
+      padding: 10px 14px;
+    }
+
+    .card .card-title a {
+      color: #ff8c00;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .card .card-title a:hover {
+      text-decoration: underline;
+    }
+
+    /* Card body text */
+    .card .card-body {
+      padding: 12px 14px;
+    }
+
+    .card .card-body p {
+      font-size: 13px;
+      color: #333;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    /* ===== FOOTER DIV ===== */
+    .footer {
+      background: #444;
+      color: #ccc;
+      text-align: center;
+      padding: 14px;
+      font-size: 13px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER DIV -->
+  <div class="header">
+    <div class="logo-left"><img src="images/Coat_of_Arms_RWA.png" alt="coat of arms"></div>
+
+    <div class="header-text">
+      <h1>Inteko Nyarwanda Y'Ururimi N'Umuco</h1>
+      <div class="tagline">
+        <span class="ntibavuga">Ntibavuga:</span> Yigeze kurwaraho umutwe yenda kurira. |
+        <span class="bavuga">Bavuga:</span> Yigeze kurwara umutwe yenda kurira
+      </div>
+    </div>
+
+    <div class="logo-right"><img src="images/arton95679.jpg" alt="Inteko logo"></div>
+  </div>
+
+  <!-- NAV DIV -->
+  <div class="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Entatainment</a></li>
+      <li><a href="#">Politique</a></li>
+      <li><a href="#">Sports</a></li>
+      <li><a href="#">Business</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <!-- MAIN CONTENT DIV -->
+  <div class="main-content">
+
+    <!-- CARDS ROW DIV -->
+    <div class="cards-row">
+
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-img card-img-1">
+          <img src="https://images.unsplash.com/photo-1571080096581-53aefc318ac3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="soccer" class="sport-icon">
+        </div>
+        <div class="card-title">
+          <a href="#">Player of the Week on 23</a>
+        </div>
+        <div class="card-body">
+          <p>
+            Note that it's important to have both opening and closing curly braces ({ and }) around
+            each element's style. You also need to make sure your element's style is between the
+            opening and closing style tags. Finally, be sure to add the semicolon to the end of each
+            of your element's styles. Delete your h2 element's style attribute and instead create a
+            CSS style element.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-img card-img-2">
+          <img src="https://images.unsplash.com/photo-1571080096581-53aefc318ac3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="soccer" class="sport-icon">
+        </div>
+        <div class="card-title">
+          <a href="#">Player of the Week on 23</a>
+        </div>
+        <div class="card-body">
+          <p>
+            Note that it's important to have both opening and closing curly braces ({ and }) around
+            each element's style. You also need to make sure your element's style is between the
+            opening and closing style tags. Finally, be sure to add the semicolon to the end of each
+            of your element's styles. Delete your h2 element's style attribute and instead create a
+            CSS style element.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-img card-img-3">
+          <img src="https://images.unsplash.com/photo-1571080096581-53aefc318ac3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="soccer" class="sport-icon">
+        </div>
+        <div class="card-title">
+          <a href="#">Player of the Week on 23</a>
+        </div>
+        <div class="card-body">
+          <p>
+            Note that it's important to have both opening and closing curly braces ({ and }) around
+            each element's style. You also need to make sure your element's style is between the
+            opening and closing style tags. Finally, be sure to add the semicolon to the end of each
+            of your element's styles. Delete your h2 element's style attribute and instead create a
+            CSS style element.
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <!-- END CARDS ROW -->
+
+  </div>
+  <!-- END MAIN CONTENT -->
+
+  <!-- FOOTER DIV -->
+  <div class="footer">
+    &copy; 2025 Inteko Nyarwanda Y'Ururimi N'Umuco. All rights reserved.
+  </div>
+
+</body>
+</html>

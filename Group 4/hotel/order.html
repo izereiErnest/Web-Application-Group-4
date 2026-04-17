@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grand Palms Hotel – Order Online</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .order-banner { position: relative; height: 260px; overflow: hidden; }
+    .order-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .order-banner .overlay {
+      position: absolute; inset: 0; background: rgba(0,0,0,0.6);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+    }
+    .order-banner .overlay h1 { color: var(--gold); font-size: 42px; letter-spacing: 3px; }
+    .order-banner .overlay p { color: #ccc; margin-top: 10px; font-size: 15px; letter-spacing: 2px; }
+
+    .order-container { max-width: 780px; margin: 50px auto; padding: 0 20px 60px; }
+    .order-form-card { background: #fff; border: 1px solid #e0d6c8; padding: 40px; }
+    .form-title { font-size: 22px; color: var(--dark); margin-bottom: 6px; }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;
+      color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 10px 14px; border: 1px solid #ccc;
+      font-family: Georgia, serif; font-size: 14px;
+      background: #faf9f7; color: var(--text); outline: none; transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group textarea { height: 100px; resize: vertical; }
+
+    .form-row { display: flex; gap: 20px; }
+    .form-row .form-group { flex: 1; }
+
+    .menu-checkboxes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 6px; }
+    .menu-checkboxes label {
+      display: flex; align-items: center; gap: 8px;
+      font-family: Arial, sans-serif; font-size: 13px; color: #444;
+      font-weight: normal; text-transform: none; letter-spacing: 0; cursor: pointer;
+    }
+    .menu-checkboxes input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--gold); cursor: pointer; }
+
+    .section-label {
+      font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;
+      color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: block;
+    }
+
+    .submit-btn {
+      background: var(--gold); color: var(--dark); border: none;
+      padding: 16px 40px; font-family: Arial, sans-serif; font-size: 14px;
+      font-weight: bold; letter-spacing: 2px; text-transform: uppercase;
+      cursor: pointer; width: 100%; margin-top: 10px; transition: background 0.2s;
+    }
+    .submit-btn:hover { background: #e0bc66; }
+    .reset-btn {
+      background: #e0e0e0; color: #555; border: 1px solid #ccc;
+      padding: 10px 30px; font-family: Arial, sans-serif; font-size: 13px;
+      cursor: pointer; margin-top: 10px; width: 100%;
+    }
+    .reset-btn:hover { background: #d0d0d0; }
+    .success-msg {
+      display: none; background: #d4edda; border: 1px solid #c3e6cb;
+      color: #155724; padding: 16px; margin-top: 20px;
+      font-family: Arial, sans-serif; font-size: 14px; text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <a href="index.html" class="logo">GRAND PALMS</a>
+      <div class="tagline">Luxury Hotel &amp; Resort</div>
+    </div>
+    <div class="contact-info">
+      +25000000000000
+      <span>reservations@grandpalms.com</span>
+    </div>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="order.html" class="active">Order</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="order-banner">
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&auto=format&fit=crop" alt="Fine dining" />
+    <div class="overlay">
+      <h1>Order Online</h1>
+      <p>Pre-order your meal · Room service · Table reservation</p>
+    </div>
+  </div>
+
+  <div class="order-container">
+    <div class="order-form-card">
+      <div class="form-title">Place Your Order</div>
+      <div class="gold-line"></div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" id="fname" placeholder="e.g. John" />
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" id="lname" placeholder="e.g. Smith" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="email" placeholder="john@example.com" />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="phone" placeholder="+1 000 000 0000" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Order Type</label>
+        <select id="orderType">
+          <option value="">-- Select --</option>
+          <option>Dine In – Restaurant</option>
+          <option>Room Service</option>
+          <option>Takeaway</option>
+          <option>Pool Side Delivery</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Room / Table Number</label>
+          <input type="text" id="room" placeholder="e.g. Room 204 or Table 5" />
+        </div>
+        <div class="form-group">
+          <label>Preferred Delivery Time</label>
+          <input type="time" id="delivTime" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <span class="section-label">Select Items from Menu</span>
+        <div class="menu-checkboxes">
+          <label><input type="checkbox" value="Grilled Atlantic Salmon" /> Grilled Atlantic Salmon – $28</label>
+          <label><input type="checkbox" value="Lobster Thermidor" /> Lobster Thermidor – $56</label>
+          <label><input type="checkbox" value="Fish & Chips" /> Fish &amp; Chips – $22</label>
+          <label><input type="checkbox" value="Prawn Cocktail" /> Prawn Cocktail – $18</label>
+          <label><input type="checkbox" value="Tuna Tartare" /> Tuna Tartare – $32</label>
+          <label><input type="checkbox" value="Grand Palms Cocktail" /> Signature Cocktail – $16</label>
+          <label><input type="checkbox" value="Classic Mojito" /> Classic Mojito – $12</label>
+          <label><input type="checkbox" value="Tropical Sunshine Juice" /> Tropical Sunshine Juice – $9</label>
+          <label><input type="checkbox" value="Green Detox Juice" /> Green Detox Juice – $8</label>
+          <label><input type="checkbox" value="Fresh Orange Juice" /> Fresh Orange Juice – $6</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Number of Guests</label>
+        <select id="guests">
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4 Guests</option>
+          <option>5+ Guests</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Special Requests / Dietary Requirements</label>
+        <textarea id="special" placeholder="e.g. No nuts, vegetarian option, extra sauce..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Payment Method</label>
+        <select id="payment">
+          <option>Credit / Debit Card</option>
+          <option>Charge to Room</option>
+          <option>Cash on Delivery</option>
+          <option>Mobile Payment</option>
+        </select>
+      </div>
+
+      <button class="submit-btn" onclick="submitOrder()">Place My Order</button>
+      <button class="reset-btn" onclick="resetForm()">Clear Form</button>
+      <div class="success-msg" id="successMsg">
+        Your order has been received. We will deliver within 30 minutes.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <h4>Grand Palms Hotel</h4>
+      <p>123 Ocean Boulevard</p>
+      <p>Miami, FL 33101, USA</p>
+      <p style="margin-top:8px;">+25000000000000</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div>
+      <h4>Dining Hours</h4>
+      <p>Breakfast: 6:30 AM – 10:30 AM</p>
+      <p>Lunch: 12:00 PM – 3:00 PM</p>
+      <p>Dinner: 6:00 PM – 11:00 PM</p>
+    </div>
+  </footer>
+  <div class="footer-bottom">&copy; 2025 Grand Palms Hotel. All rights reserved.</div>
+
+  <script>
+    function submitOrder() {
+      const name = document.getElementById('fname').value.trim();
+      if (!name) { alert('Please enter your first name.'); return; }
+      const msg = document.getElementById('successMsg');
+      msg.style.display = 'block';
+      window.scrollTo({ top: msg.offsetTop - 20, behavior: 'smooth' });
+    }
+    function resetForm() {
+      document.querySelectorAll('input, select, textarea').forEach(el => {
+        if (el.type === 'checkbox') el.checked = false;
+        else el.value = '';
+      });
+      document.getElementById('successMsg').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
